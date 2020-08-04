@@ -42,5 +42,11 @@ exports.getStoriesFeed = ({
   fetch(`https://i.instagram.com/api/v1/feed/reels_tray/`, {
     headers: getHeaders(headers, sessionid, userid)
   })
-  .then(res => res.json())
+.then(res => res.json()).catch((e) => {
+    console.log(e);
+    return {
+      error:true,
+      done:false
+    }
+  })
 )
