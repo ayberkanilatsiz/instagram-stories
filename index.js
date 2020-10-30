@@ -15,7 +15,7 @@ exports.getUserByUsername = username => (
   fetch(`https://www.instagram.com/${username}/?__a=1`)
     .then(res => res.json())
 )
-​
+
 exports.getMediaByCode = code => (
   fetch(`https://www.instagram.com/p/${code}/?__a=1`)
     .then(res => res.json())
@@ -37,7 +37,7 @@ exports.getStories = ({
   return fetch(`https://i.instagram.com/api/v1/feed/user/${id}/reel_media/`, opts)
     .then(res => res.json())
 }
-​
+
 exports.getStoriesFeed = ({
   sessionid,
   userid,
