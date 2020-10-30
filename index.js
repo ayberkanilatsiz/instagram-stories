@@ -10,7 +10,7 @@ const getHeaders = (headers, sessionid, userid) => {
     cookie: `sessionid=${sessionid}; ds_user_id=${userid}`
   })
 }
-​
+
 exports.getUserByUsername = username => (
   fetch(`https://www.instagram.com/${username}/?__a=1`)
     .then(res => res.json())
