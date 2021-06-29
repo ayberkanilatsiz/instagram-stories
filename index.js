@@ -34,7 +34,13 @@ exports.getStories = ({
     opts.agent = proxy
   }
   return fetch(`https://i.instagram.com/api/v1/feed/user/${id}/reel_media/`, opts)
-    .then(res => res.json())
+    .then(res => res.json()).catch((e) => {
+      console.log(e);
+      return {
+        error: true,
+        done: false
+      }
+    })
 }
 exports.getStoriesFeed = ({
   sessionid,
